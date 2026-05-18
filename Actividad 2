@@ -1,0 +1,28 @@
+using System;
+
+
+    
+    
+        int[,] escuela = new int[3, 2];
+
+
+        for(int fila= 0; fila < escuela.GetLength(0); fila++)
+
+        {
+            for (int columna = 0; columna < escuela.GetLength(1); columna++)
+
+            {
+
+
+                Console.Write($"ingrese alumnos para [{fila}, {columna}]:");
+
+                escuela[fila, columna] = int.Parse(Console.ReadLine());
+
+            }
+        }
+        Console.WriteLine("n-----DATOS GUARDADOS-----");
+
+
+        int alumnosEspecifico = escuela[2, 0];
+
+        Console.WriteLine($"En el Piso 2, Lab 0 hay: {alumnosEspecifico} alumnos.");
