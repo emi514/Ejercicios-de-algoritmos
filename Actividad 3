@@ -1,0 +1,39 @@
+namespace ReporteEscuela
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Crear el Reporte...");
+
+            
+            int[,] escuela = new int[,] {
+                { 15, 20, 18, 25 },
+                { 12, 30, 22, 0 },
+                { 10, 15, 14, 20 }
+            };
+
+            
+            string miStringLargo = "";
+
+           
+            for (int piso = 0; piso < escuela.GetLength(0); piso++)
+            {
+                for (int lab = 0; lab < escuela.GetLength(1); lab++)
+                {
+                    int alumnos = escuela[piso, lab];
+
+                    
+                    miStringLargo += $"Piso {piso}, Lab {lab}: {alumnos} alumnos\n";
+                }
+            }
+
+            
+            File.WriteAllText("reporte.txt", miStringLargo);
+
+            
+            Console.WriteLine("Datos guardados con éxito en el disco.");
+        }
+    }
+}
+xi
