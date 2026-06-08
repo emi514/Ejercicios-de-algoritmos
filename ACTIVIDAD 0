@@ -42,4 +42,4 @@ class Program
         Console.WriteLine($"El promedio es de {promedio:N2} alumnos por cada computadora.");
     }
 }
-v
+
