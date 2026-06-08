@@ -1,0 +1,45 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Ingresá la cantidad de alumnos: ");
+        string? entradaAlumnos = Console.ReadLine();
+
+        if (!int.TryParse(entradaAlumnos, out int cantAlumnos) || cantAlumnos < 0)
+        {
+            Console.WriteLine("Entrada no válida. Por favor, ingresá un número entero positivo.");
+            return;
+        }
+
+        Console.Write("Ingresá la cantidad de computadoras: ");
+        string? entradaCompus = Console.ReadLine();
+
+        if (!int.TryParse(entradaCompus, out int cantCompus) || cantCompus < 0)
+        {
+            Console.WriteLine("Entrada no válida. Por favor, ingresá un número entero positivo.");
+            return;
+        }
+
+        if (cantCompus == 0)
+        {
+            Console.WriteLine("No se puede calcular el promedio con 0 computadoras.");
+            return;
+        }
+
+        double promedio = (double)cantAlumnos / (double)cantCompus;
+
+        if (cantAlumnos > cantCompus)
+        {
+            Console.WriteLine("Resultado: Faltan equipos.");
+        }
+        else
+        {
+            Console.WriteLine("Resultado: Equipos suficientes.");
+        }
+
+        Console.WriteLine($"El promedio es de {promedio:N2} alumnos por cada computadora.");
+    }
+}
+v
